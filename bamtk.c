@@ -97,7 +97,7 @@ static void usage(FILE *fp)
 "     collate        shuffle and group alignments by name\n"
 "     cat            concatenate BAMs\n"
 "     merge          merge sorted alignments\n"
-"     mpileup        multi-way pileup\n"
+"     edits          [Intellia] generate base conversion matrix for SNP and INDEL\n"
 "     sort           sort alignment file\n"
 "     split          splits a file by read group\n"
 "     quickcheck     quickly check if SAM/BAM/CRAM file appears intact\n"
@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
     int ret = 0;
     if (strcmp(argv[1], "view") == 0)           ret = main_samview(argc-1, argv+1);
     else if (strcmp(argv[1], "import") == 0)    ret = main_import(argc-1, argv+1);
-    else if (strcmp(argv[1], "mpileup") == 0)   ret = bam_mpileup(argc-1, argv+1);
+    else if (strcmp(argv[1], "edits") == 0)     ret = bam_mpileup(argc-1, argv+1);
     else if (strcmp(argv[1], "merge") == 0)     ret = bam_merge(argc-1, argv+1);
     else if (strcmp(argv[1], "sort") == 0)      ret = bam_sort(argc-1, argv+1);
     else if (strcmp(argv[1], "index") == 0)     ret = bam_index(argc-1, argv+1);

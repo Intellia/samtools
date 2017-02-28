@@ -34,7 +34,7 @@ T	I	16
 T	D	39
 ```
 
-Use it as 
+The module has been renamed to `edits` to avoid confusion. Use it as 
 ```bash 
-samtools mpileup -f /annotation/mm10.fa sample.bt2mm10.merged.bg.sorted.bam
+samtools edits -f /annotation/mm10.fa sample.bt2mm10.merged.bg.sorted.bam
 ```
