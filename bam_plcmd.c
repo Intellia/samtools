@@ -45,14 +45,14 @@ DEALINGS IN THE SOFTWARE.  */
 #include "sam_opts.h"
 
 const static int edit_bit_sz = 3;
-const static int _m = 0; // 000
-const static int _a = 1; // 001
-const static int _c = 2; // 010
-const static int _g = 3; // 011
-const static int _t = 4; // 100
-const static int _i = 5; // 101
-const static int _d = 6; // 110
-const static int na = 7; // 111
+#define _m 0 // 000
+#define _a 1 // 001
+#define _c 2 // 010
+#define _g 3 // 011
+#define _t 4 // 100
+#define _i 5 // 101
+#define _d 6 // 110
+#define na 7 // 111
 const static int edit_sz = 8; // 1000
 const char edit2char[] = "=ACGTIDX";
 
@@ -796,7 +796,7 @@ static int mpileup(mplp_conf_t *conf, int n, char **fn) {
     // bowhan: report
     for (int i = _a; i <= _t; ++i) {
         for (int j = 0; j < na; ++j) {
-            fprintf(pileup_fp, "%c\t%c\t%lld\n",
+            fprintf(pileup_fp, "%c\t%c\t%" PRId64 "\n",
                     edit2char[i], edit2char[j], counter[(i << edit_bit_sz) | j]);
         }
     }
